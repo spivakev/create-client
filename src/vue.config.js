@@ -1,5 +1,4 @@
 module.exports = {
-  publicPath: process.env.NODE_ENV === 'production'
-    ? '/create-client/'
-    : '/'
+  publicPath: '/create-client-672834678236427684287/'
 }
+
