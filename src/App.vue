@@ -1,28 +1,81 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <CreateClientForm />
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
+import CreateClientForm from "@/components/CreateClientForm";
 export default {
-  name: 'App',
+  name: "App",
   components: {
-    HelloWorld
+    CreateClientForm
   }
-}
+};
 </script>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+<style lang="sass">
+@import "./styles/_variables.sass"
+
+body
+  background-color: $bg-color
+
+#app
+  font-family: $font-stack
+  -webkit-font-smoothing: antialiased
+  -moz-osx-font-smoothing: grayscale
+
+  text-align: center
+  color: #2c3e50
+
+input,
+select
+  border: $input-border
+  border-radius: $input-radius
+  padding: 10px 15px
+  background-color: $surface-color
+  color: $title-color
+
+input,
+select:not([multiple])
+  max-height: $input-height
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button
+  -webkit-appearance: none
+  margin: 0
+
+input[type="number"]
+  -moz-appearance: textfield
+  font-family: $font-stack
+
+input[type="date"]
+  box-sizing: border-box
+
+input[type="date"],
+input[type="number"]
+  font-family: Arial, sans-serif
+
+label
+  color: $title-color
+
+@media (max-width: 767px)
+  #app
+    font-size: 14px
+
+img, input,
+select, button, progress
+  max-width: 100%
+
+input[type="file"],
+input[type="submit"]  
+  white-space: pre-wrap
+
+progress,
+input[type="range"]  
+  width: 100%
+
+@supports (--moz-appearance: none)
+  input[type="number"]  
+  width: 100%
 </style>
